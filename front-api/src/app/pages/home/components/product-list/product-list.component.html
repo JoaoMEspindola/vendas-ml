@@ -1,0 +1,13 @@
+<mat-card class="card">
+    <mat-toolbar>
+        <span>Produtos Disponíveis</span>
+    </mat-toolbar>
+    <mat-card-content>
+        <div class="list-products-container">
+            @for (product of productsList|async; track product){
+                    <app-product image="{{product.image}}" name="{{product.name}}" reference="{{product.reference}}"
+                    amount="{{product.amount}}" brand="{{product.brand}}"></app-product>
+            }
+        </div>
+        </mat-card-content>
+</mat-card>

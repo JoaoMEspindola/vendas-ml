@@ -1,0 +1,9 @@
+.list-products-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.list-products-container>app-product{
+    margin: 3%;
+}

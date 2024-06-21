@@ -1,0 +1,12 @@
+.product-card{
+    align-items: center;
+    text-align: center;
+}
+
+.product-img{
+    width: 100%;
+}
+
+.buttons{
+    margin: 3%;
+}
