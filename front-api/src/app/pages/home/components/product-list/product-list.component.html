@@ -1,13 +1,18 @@
-<mat-card class="card">
-    <mat-toolbar>
-        <span>Produtos Disponíveis</span>
-    </mat-toolbar>
-    <mat-card-content>
-        <div class="list-products-container">
-            @for (product of productsList|async; track product){
-                    <app-product image="{{product.image}}" name="{{product.name}}" reference="{{product.reference}}"
-                    amount="{{product.amount}}" brand="{{product.brand}}"></app-product>
-            }
-        </div>
-        </mat-card-content>
-</mat-card>
+<div class="container">
+    <mat-card class="card">
+        <mat-toolbar>
+            <span style="margin: auto;">Produtos Disponíveis</span>
+            <button routerLink="/cadastro" mat-mini-fab color="primary" aria-label="Adicionar produto">
+                <mat-icon style="color: white;">add</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-card-content>
+            <div class="list-products-container">
+                @for (product of productsList|async; track product){
+                        <app-product image="{{product.image}}" name="{{product.name}}" reference="{{product.reference}}"
+                        amount="{{product.amount}}" brand="{{product.brand}}"></app-product>
+                }
+            </div>
+            </mat-card-content>
+    </mat-card>
+</div>

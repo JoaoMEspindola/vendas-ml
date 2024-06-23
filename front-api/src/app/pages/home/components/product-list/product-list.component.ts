@@ -1,19 +1,28 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Produto } from '../../../../model/produto';
-import { ButtonComponent } from "../../../../shared/components/button/button.component";
+import {MatButtonModule} from '@angular/material/button';
 import { ProductComponent } from "../product/product.component";
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ProdutosService } from '../../services/produtos.service';
 import { Observable, first, tap } from 'rxjs';
-import { AsyncPipe, CommonModule } from '@angular/common';
+import {CommonModule } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
     selector: 'app-product-list',
     standalone: true,
     templateUrl: './product-list.component.html',
     styleUrl: './product-list.component.css',
-    imports: [ButtonComponent, ProductComponent, MatCardModule, MatToolbarModule, CommonModule]
+    imports: [
+      MatButtonModule,
+      ProductComponent,
+      MatCardModule,
+      MatToolbarModule,
+      CommonModule,
+      MatIconModule,
+      RouterLink]
 })
 export class ProductListComponent {
 
