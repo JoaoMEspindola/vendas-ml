@@ -9,8 +9,9 @@
         <mat-card-content>
             <div class="list-products-container">
                 @for (product of productsList|async; track product){
-                        <app-product image="{{product.image}}" name="{{product.name}}" reference="{{product.reference}}"
-                        amount="{{product.amount}}" brand="{{product.brand}}"></app-product>
+                        <app-product [image]="product.image" [name]="product.name" [reference]="product.reference"
+                        [amount]= product.amount [brand]="product.brand" [id]="product.id" (delete)="onDelete($event)"
+                        ></app-product>
                 }
             </div>
             </mat-card-content>

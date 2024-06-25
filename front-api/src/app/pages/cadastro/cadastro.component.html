@@ -17,7 +17,7 @@
 
             <mat-form-field class="full-width">
                 <mat-label>Quantidade</mat-label>
-                <input matInput formControlName="amount">
+                <input matInput formControlName="amount" type="number">
             </mat-form-field>
 
             <mat-form-field class="full-width">
@@ -34,6 +34,6 @@
 
     <mat-card-actions>
         <button mat-raised-button routerLink="/" color="primary" (click)="onSubmit()">Salvar</button>
-        <button mat-raised-button routerLink="/" (click)="onCancel()">Cancelar</button>
+        <button mat-raised-button routerLink="/">Cancelar</button>
       </mat-card-actions>
 </mat-card>

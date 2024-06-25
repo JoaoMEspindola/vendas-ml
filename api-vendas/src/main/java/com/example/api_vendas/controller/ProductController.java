@@ -36,4 +36,28 @@ public class ProductController {
         return productRepository.save(product);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product){
+        return productRepository.findById(id)
+                .map(recordFound -> {
+                    recordFound.setName(product.getName());
+                    recordFound.setReference(product.getReference());
+                    recordFound.setImage(product.getImage());
+                    recordFound.setAmount(product.getAmount());
+                    recordFound.setBrand(product.getBrand());
+                    Product updated = productRepository.save(recordFound);
+                    return ResponseEntity.ok().body(updated);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProduct(@PathVariable Long id){
+        return productRepository.findById(id)
+                .map(record -> {
+                    productRepository.deleteById(id);
+                    return ResponseEntity.noContent().<Void>build();
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
 }

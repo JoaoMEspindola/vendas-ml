@@ -5,10 +5,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { ProductComponent } from "../product/product.component";
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { ProdutosService } from '../../services/produtos.service';
 import { Observable, first, tap } from 'rxjs';
 import {CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
+import { ProdutosService } from '../../../../services/produtos.service';
 
 @Component({
     selector: 'app-product-list',
@@ -36,5 +36,17 @@ export class ProductListComponent {
         );
   }
 
+  refresh(){
+    this.productsList = this.produtosService.list()
+        .pipe(
+            first(),
+            tap(produtos => console.log(produtos))
+        );
+  }
 
+  onDelete(id: string) {
+    this.produtosService.remove(id).subscribe(() => {
+      this.refresh();
+    });
+  }
 }

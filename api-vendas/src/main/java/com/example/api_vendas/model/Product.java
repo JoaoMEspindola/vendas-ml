@@ -19,7 +19,7 @@ public class Product {
     private String reference;
 
     @Column(name = "quantidade", nullable = false)
-    private Integer amount;
+    private Number amount;
 
     @Column(name = "marca", nullable = false)
     private String brand;
