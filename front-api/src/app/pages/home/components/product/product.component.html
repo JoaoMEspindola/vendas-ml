@@ -1,19 +1,19 @@
 <mat-card class="product-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title>{{name}}</mat-card-title>
-      <mat-card-subtitle>{{brand}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="{{image}}" class="product-img">
-    <mat-card-content>
-      <p>Ref: {{reference}}</p>
-      <p>Quantidade: {{amount}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button [routerLink]="['edit', id]" mat-mini-fab color="white" style="margin-right: 8px;">
-        <mat-icon color="primary">edit</mat-icon>
-      </button>
-      <button (click)="onDelete(id)" mat-mini-fab color="white" style="margin-left: 8px;">
-        <mat-icon color="warn">delete</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-subtitle>{{ brand }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ image }}" class="product-img">
+  <mat-card-content>
+    <p>Ref: {{ reference }}</p>
+    <p>Quantidade: {{ amount }}</p>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <button [routerLink]="['edit', id]" mat-mini-fab color="white">
+      <mat-icon color="primary">edit</mat-icon>
+    </button>
+    <button (click)="onDelete(id)" mat-mini-fab color="white">
+      <mat-icon color="warn">delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
